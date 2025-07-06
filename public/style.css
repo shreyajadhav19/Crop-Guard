@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #e8f5e9, #d0f0c0);
+  min-height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease-in;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInDown 1s ease;
+}
+
+header h1 {
+  color: #2e7d32;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+}
+
+.main-container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 90%;
+  animation: slideUp 1s ease;
+  transition: transform 0.4s ease;
+}
+
+.result-section h2 {
+  color: #1b5e20;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  animation: fadeInText 1s ease 0.5s forwards;
+  opacity: 0;
+}
+
+.result-section p {
+  color: #388e3c;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInText 1s ease 0.7s forwards;
+  opacity: 0;
+}
+
+#result-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  opacity: 0;
+  animation: zoomIn 0.8s ease 1s forwards;
+}
+
+#result-image:hover {
+  transform: scale(1.02);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .main-container {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .result-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .result-section p {
+    font-size: 1rem;
+  }
+}

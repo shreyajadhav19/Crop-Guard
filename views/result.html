@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detection Result</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Add this only if not in style.css */
+    #result-image {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CropGuard AI - Detection Result</h1>
+    <p>Helping farmers fight crop diseases smarter</p>
+  </header>
+
+  <div class="main-container">
+    <div class="result-section">
+      <h2 id="disease-name"></h2>
+      <p id="treatment"></p>
+      <img id="result-image" src="" alt="Detected Leaf Image">
+    </div>
+  </div>
+<div id="loader" style="display:none;">
+  <p>Analyzing image...</p>
+  <div class="spinner"></div>
+</div>
+
+  <script>
+    // Extract query parameters from URL
+    const params = new URLSearchParams(window.location.search);
+    const disease = params.get("disease");
+    const treatment = params.get("treatment");
+    const imageName = params.get("image");
+
+    // Set values to elements
+    document.getElementById("disease-name").textContent = disease;
+    document.getElementById("treatment").textContent = treatment;
+    document.getElementById("result-image").src = `/uploads/${imageName}`;
+  </script>
+</body>
+</html>
